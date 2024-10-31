@@ -1,8 +1,6 @@
-import React from "react";
-import HomePage from "@/presentation/pages/home";
+import React from 'react'
+import HomePage from '@/presentation/pages/home'
 
-export default function App() {
-    return (
-        <HomePage/>
-    )
+export default function App (): JSX.Element {
+  return <HomePage />
 }
