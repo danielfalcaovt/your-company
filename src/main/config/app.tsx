@@ -1,7 +1,7 @@
 import React from 'react'
-import HomePage from '@/presentation/pages/home'
 import '@/presentation/styles/global/global-styles.scss'
+import Routes from './routes'
 
 export default function App (): JSX.Element {
-  return <HomePage />
+  return <Routes />
 }
