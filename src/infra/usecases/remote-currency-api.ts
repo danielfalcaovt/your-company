@@ -14,7 +14,7 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi {
       const currencyProperty = Object.keys(result.body)
       console.log(currencyProperty)
       const { code, pctChange, high } = result.body[currencyProperty[0]]
-      return new Promise((resolve) => resolve({ code, pctChange, value: high }))
+      return new Promise((resolve) => resolve({ code, pctChange, value: `R$${Number(high).toLocaleString()}` }))
     } else {
       return Promise.resolve(null)
     }
