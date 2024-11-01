@@ -7,15 +7,15 @@ export interface CurrencyDataType {
 }
 
 type currencyDataContextType = {
-  CurrencyData: CurrencyDataType
-  setCurrencyData: Dispatch<SetStateAction<CurrencyDataType>>
+  CurrencyData: CurrencyDataType[]
+  setCurrencyData: Dispatch<SetStateAction<CurrencyDataType[]>>
 }
 
 export const CurrencyDataContext = createContext<currencyDataContextType>({
-  CurrencyData: {
+  CurrencyData: [{
     code: '',
     pctChange: '',
     value: ''
-  },
+  }],
   setCurrencyData () {}
 })
