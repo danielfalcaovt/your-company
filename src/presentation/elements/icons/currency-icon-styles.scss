@@ -1,0 +1,25 @@
+.currencyButton {
+  background: var(--currencyColor);
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.BTC {
+  background: #e7c83c;
+}
+
+.USD {
+  background-color: #62A290;
+}
+
+.XRP {
+  background: #303C31;
+}
+
+.ETH {
+  background: #5F87DC;
+}
+
