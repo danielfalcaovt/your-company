@@ -19,7 +19,9 @@ export class ApexChartsAdapter implements IChartGeneratorLib {
         categories: data.categories
       }
     }
+    console.log(data)
     const chart = new ApexCharts(document.querySelector(data.element), options)
+    console.log('renderização de charts')
     await chart.render()
   }
 }

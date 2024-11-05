@@ -18,12 +18,13 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
       const currenciesArray: ICurrency[] = []
       const finalResult = result.body
       for (const pos of currencyProperties) {
-        finalResult[pos].value = `R$ ${Number(result.body[pos].high).toLocaleString()}`
+        finalResult[pos].value = `R$ ${Number(
+          result.body[pos].high
+        ).toLocaleString()}`
         finalResult[pos].name = result.body[pos].name
         currenciesArray.push(finalResult[pos])
         delete finalResult[pos].high
       }
-      console.log(finalResult)
       return new Promise((resolve) => resolve(currenciesArray))
     } else {
       return Promise.resolve(null)
@@ -31,13 +32,19 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
   }
 
   async getHistory (code: string, days: number): Promise<ICurrency[]> {
-    const result = await this.httpClient.get({ url: `${env.currencyHistory}/${code}/${days}` })
+    const result = await this.httpClient.get({
+      url: `${env.currencyHistory}/${code}/${days}`
+    })
     if (result.statusCode === 200) {
-      const finalResult = result.body
-      for (const pos in result.body) {
-        finalResult[pos].value = Number(result.body[pos].high)
-        finalResult[pos].name = result.body[0].name
-        delete finalResult[pos].high
+      const finalResult: any = []
+      // insert currency data from 0 index of result in the 0 index of finalResult
+      // invert the currency values received from result.body
+      for (let pos = result.body.length - 1; pos >= 0; pos--) {
+        const newValue = result.body[pos]
+        newValue.value = Number(result.body[pos].high)
+        newValue.name = result.body[0].name
+        delete newValue.high
+        finalResult.push(newValue)
       }
       return finalResult
     }
