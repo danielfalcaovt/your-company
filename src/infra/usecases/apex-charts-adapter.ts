@@ -6,22 +6,35 @@ export class ApexChartsAdapter implements IChartGeneratorLib {
   async generateChart (data: IChartModel): Promise<void> {
     const options = {
       chart: {
-        type: 'line'
+        type: 'line',
+        zoom: {
+          enabled: false
+        },
+        toolbar: {
+          show: false
+        }
+      },
+      yaxis: {
+        show: false
       },
       stroke: {
         curve: 'smooth'
       },
-      series: [{
-        name: 'value',
-        data: data.data
-      }],
+      series: [
+        {
+          name: 'value',
+          data: data.data
+        }
+      ],
       xaxis: {
-        categories: data.categories
+        categories: data.categories,
+        labels: { show: false }
+      },
+      grid: {
+        show: false
       }
     }
-    console.log(data)
     const chart = new ApexCharts(document.querySelector(data.element), options)
-    console.log('renderização de charts')
     await chart.render()
   }
 }
