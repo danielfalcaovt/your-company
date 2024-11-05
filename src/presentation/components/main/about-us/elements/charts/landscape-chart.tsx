@@ -17,7 +17,7 @@ export default function LandscapeChart (): JSX.Element {
         </div>
       </div>
       <div className={styles.lchartMain}>
-        <div id='landscape-chart'></div>
+        <div className={styles.chart} id='landscape-chart'></div>
       </div>
       <div className={styles.lchartFooter}>
         <span>{CurrencyData[0].value}</span>

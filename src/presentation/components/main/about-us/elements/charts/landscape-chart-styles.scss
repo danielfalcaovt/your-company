@@ -42,6 +42,15 @@
   grid-area: 1/2/3/3;
   width: 100%;
   height: 100%;
+  .chart {
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 15px;
+    overflow: hidden;
+  }
 }
 
 .lchartFooter {
