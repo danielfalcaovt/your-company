@@ -5,7 +5,10 @@ export default function ContextProvider ({ children }: any): JSX.Element {
   const [CurrencyData, setCurrencyData] = useState<CurrencyDataType[]>([{
     code: '',
     pctChange: '',
-    value: ''
+    value: '',
+    name: '',
+    timestamp: '',
+    lastDays: []
   }])
   return (
     <CurrencyDataContext.Provider value={{ CurrencyData, setCurrencyData }}>

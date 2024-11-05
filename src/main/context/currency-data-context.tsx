@@ -1,9 +1,13 @@
+import { ICurrency } from '@/domain/protocols/currency'
 import { createContext, Dispatch, SetStateAction } from 'react'
 
 export interface CurrencyDataType {
-  code: string
-  pctChange: string
   value: string
+  pctChange: string
+  code: string
+  name: string
+  lastDays?: ICurrency[]
+  timestamp: string
 }
 
 type currencyDataContextType = {
@@ -15,7 +19,10 @@ export const CurrencyDataContext = createContext<currencyDataContextType>({
   CurrencyData: [{
     code: '',
     pctChange: '',
-    value: ''
+    value: '',
+    name: '',
+    timestamp: '',
+    lastDays: []
   }],
   setCurrencyData () {}
 })
