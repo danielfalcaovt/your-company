@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open"
+    "dev": "webpack-dev-server --mode development --open --env NODE_ENV=development",
+    "build": "webpack --mode production --env NODE_ENV=production"
   },
   "keywords": [],
-  "author": "",
+  "author": "deenedev",
   "license": "ISC",
   "description": "",
   "devDependencies": {
