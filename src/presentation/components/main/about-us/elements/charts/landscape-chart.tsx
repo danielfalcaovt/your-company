@@ -22,8 +22,8 @@ export default function LandscapeChart (): JSX.Element {
       <div className={styles.lchartFooter}>
         <span>{CurrencyData[0].value}</span>
         {Number(CurrencyData[0].pctChange) < 0
-          ? <WarningDecreasing value={`${CurrencyData[0].pctChange}%`} />
-          : <WarningIncreasing value={`+${CurrencyData[0].pctChange}%`} />}
+          ? <WarningDecreasing value={CurrencyData[0].pctChange} />
+          : <WarningIncreasing value={CurrencyData[0].pctChange} />}
       </div>
     </div>
   )

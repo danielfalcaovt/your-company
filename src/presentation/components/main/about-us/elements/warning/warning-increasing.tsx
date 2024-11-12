@@ -9,7 +9,7 @@ export default function WarningIncreasing (props: WarningValues): JSX.Element {
   return (
     <div className={styles.increasing}>
       <img src='/imgs/assets/increase.png' alt='increasing chart'></img>
-      <span>{props.value}</span>
+      <span>+{props.value}%</span>
     </div>
   )
 }
