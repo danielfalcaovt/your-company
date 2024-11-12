@@ -14,6 +14,19 @@ export class ApexChartsAdapter implements IChartGeneratorLib {
           show: false
         }
       },
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: 'dark',
+          type: 'horizontal',
+          shadeIntensity: 1,
+          inverseColors: true,
+          opacityFrom: 1,
+          opacityTo: 1,
+          stops: [0, 50, 100]
+        }
+      },
+      colors: [data.data[data.data.length - 1] >= data.data[data.data.length - 2] ? 'rgb(46, 224, 46)' : 'rgb(221, 36, 36)'],
       yaxis: {
         show: false
       },
