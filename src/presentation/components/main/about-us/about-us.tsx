@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import * as styles from './about-us-styles.scss'
 import LandscapeChart from './elements/charts/landscape-chart'
 import CurrencyList from './elements/charts/currency-list'
+import PortraitChart from './elements/charts/portrait-chart'
+import { CurrencyDataContext } from '@/main/context/currency-data-context'
 
 export default function AboutUs (): JSX.Element {
+  const { CurrencyData } = useContext(CurrencyDataContext)
   return (
     <section className={styles.aboutUsContainer}>
       <article className={styles.aboutUs}>
@@ -12,7 +15,7 @@ export default function AboutUs (): JSX.Element {
           <h1>Embrace the Future Currency of Our Time</h1>
         </div>
         <div className={styles.aboutUsTitleCharts}>
-          <LandscapeChart />
+          <LandscapeChart currency={CurrencyData[0]} />
         </div>
         <div className={styles.aboutUsText}>
           <p>
@@ -38,6 +41,7 @@ export default function AboutUs (): JSX.Element {
         </div>
         <div className={styles.aboutUsTextCharts}>
           <CurrencyList/>
+          <PortraitChart currency={CurrencyData[1]} />
         </div>
       </article>
     </section>
