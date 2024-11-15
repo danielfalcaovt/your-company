@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unnecessary-type-assertion */
 /* eslint-disable @typescript-eslint/return-await */
 /* eslint-disable @typescript-eslint/no-misused-promises */
 import React, { useContext, useEffect, useState } from 'react'
@@ -6,6 +7,7 @@ import { ICurrencyApi } from '@/domain/usecases/currency-api'
 import { IChartGenerator } from '@/domain/usecases/chart-generator'
 import { CurrencyDataContext } from '@/main/context/currency-data-context'
 import { IGetCurrencyHistory } from '@/domain/usecases/get-currency-history'
+import Header from '../components/header/header'
 
 interface IHomePageDependencies {
   currencyApi: ICurrencyApi
@@ -75,11 +77,23 @@ export default function HomePage (
         console.log(err)
       })
   }, [])
+
+  useEffect(() => {
+    window.addEventListener('scroll', (e) => {
+      const pageHeader = document.querySelector('#pageHeader') as HTMLDivElement
+      if (window.scrollY > 0) {
+        pageHeader.style.boxShadow = '0px 2px 3px 0px rgba(0, 0, 0, 0.144)'
+      } else {
+        pageHeader.style.boxShadow = ''
+      }
+    })
+  }, [])
+
   return (
     <>
       {isLoading && <h1>Loading....</h1>}
       <>
-        {/* <Header /> */}
+        <Header />
         <Main />
         {/* <Footer /> */}
       </>

@@ -30,14 +30,14 @@
         }
       }
       &::after {
-        transition: all 0.3s;
+        transition: all 0.2s;
         content: '';
         position: absolute;
         transform-origin: center;
         bottom: 0px;
         left: 50%;
         transform: translateX(-50%);
-        background-image: linear-gradient(to right, transparent, black, transparent);
+        background-image: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.705), transparent);
         height: 1px;
       }
     }

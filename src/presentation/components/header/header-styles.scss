@@ -1,0 +1,35 @@
+.headerComponentContainer {
+  display: flex;
+  position: sticky;
+  top: 0px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: auto;
+  height: 10vh;
+  transition: all 0.3s;
+  background: #f3faf944;
+  backdrop-filter: blur(5px);
+  z-index: 60;
+
+  .headerComponent {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .headerIcon {
+    background: transparent;
+  }
+  
+  .headerMain {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 500px;
+  }
+  
+  .headerButton {
+    display: flex;
+  }
+}
