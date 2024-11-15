@@ -21,7 +21,15 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
         finalResult[pos].value = `R$ ${Number(
           result.body[pos].high
         ).toLocaleString()}`
-        finalResult[pos].name = result.body[pos].name
+        let resultName = ''
+        for (const i of result.body[pos].name as string) {
+          if (i !== '/') {
+            resultName += i
+          } else {
+            break
+          }
+        }
+        finalResult[pos].name = resultName
         currenciesArray.push(finalResult[pos])
         delete finalResult[pos].high
       }
