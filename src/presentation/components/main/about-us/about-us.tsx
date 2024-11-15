@@ -25,7 +25,7 @@ export default function AboutUs (): JSX.Element {
             innovation to navigate the global market's complexities.
           </p>
           <div className={styles.aboutUsTextButtons}>
-            <ConfirmButton/>
+            <ConfirmButton text='Trade Now'/>
             <button className={styles.aboutUsWatchButton}>
               Watch Demo
               <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAACP0lEQVR4nO1WzWoUQRD+DooH9aB48Cci/qCCx0CYqZ/tUyCo8Wz0CXRXQRR8Ba8eBFd8gBCjpxjF99AY3yGo0cu6BqW6e8dh2ez0ZOIhsB8UDEx39ddV9VU1MMEEdaB6GsodKL2D8BqEfgbjNSitQrkNNzOFXUeWnYJSF0J9KP+psC0oLSHPz+zO4S26AeXN6LwH4UVIfhNElzA7e9CbfYss+H+2JqzdBPN8s8OF7oUbmUNagurZ6j1yDsLL/6LBnSY334LQbwg9qL+fH/q95qN2JDLLeQz78OFKz5BlR5NJhEh8h+qJdAJCL4uwDyM43IDk9zE9vT/B1+voq5suNfGh643MebniTX4tujrWH9H5ULzU95GtJsCd6Hxxm/+RAH0sEXkP5ivb+7QCtnVyN4EArcbFC2MJOLcvqmQj1krf14dzx0b4vB2JrlQTEPoSDsgujCVQrJcjUHpS6F/oK0QeY27uQLHG+kTY9zkhAhyqn+hwEoEBLAVCH0opWi/qw3wNmtMeIEDrsQYupqeAnxZzYlQKXH451sCnPVCEyu3/J0O6U03AzUzFcPb8YGnaiExNtRqRQflFPGAZTVux0pt4++dIBtHJQg02UHY6jJQfxYt8g3PHUQvM88U4HiaRevhgHGt+rfb+0lwIDxKbajZYquBzHsMe9rbRCCLXwzyPTzKr6Bbf8tp27lAw07mX2iso/yrCvuObD8O0XW424yz0g269B0gqTEamZeG3vqsJ/Qhm37zi/yVLbYIJ4PEXAAdQZcvIWjYAAAAASUVORK5CYII="/>            </button>
