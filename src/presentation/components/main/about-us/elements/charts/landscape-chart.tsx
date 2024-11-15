@@ -11,7 +11,7 @@ export default function LandscapeChart (props: { currency: ICurrency }): JSX.Ele
       <div className={styles.lchartHeader}>
         <CurrencyIcon img={'BTC'} color="#e7c83c" />
         <div className={styles.lchartHeaderTitle}>
-          <h1>{props.currency.code}</h1>
+          <h1>{props.currency.name}</h1>
           <p>BRL</p>
         </div>
       </div>
