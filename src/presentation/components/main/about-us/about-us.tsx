@@ -15,6 +15,7 @@ export default function AboutUs (): JSX.Element {
           <h1>Embrace the Future Currency of Our Time</h1>
         </div>
         <div className={styles.aboutUsTitleCharts}>
+          <div className={styles.blurBackground}></div>
           <LandscapeChart currency={CurrencyData[0]} />
         </div>
         <div className={styles.aboutUsText}>
@@ -40,6 +41,7 @@ export default function AboutUs (): JSX.Element {
           </ul>
         </div>
         <div className={styles.aboutUsTextCharts}>
+          <div className={styles.blurBackground}></div>
           <CurrencyList/>
           <PortraitChart currency={CurrencyData[1]} />
         </div>
