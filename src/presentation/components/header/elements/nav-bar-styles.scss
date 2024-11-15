@@ -1,0 +1,45 @@
+.navBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    a {
+      font-weight: 400;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 5px;
+      color: black;
+      position: relative;
+      img {
+        width: 1vw;
+      }
+      &:hover {
+        &::after {
+          width: 100%;
+        }
+      }
+      &:not(:hover) {
+        &::after {
+          width: 0px;
+        }
+      }
+      &::after {
+        transition: all 0.3s;
+        content: '';
+        position: absolute;
+        transform-origin: center;
+        bottom: 0px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-image: linear-gradient(to right, transparent, black, transparent);
+        height: 1px;
+      }
+    }
+  }
+}
