@@ -8,6 +8,7 @@ import { IChartGenerator } from '@/domain/usecases/chart-generator'
 import { CurrencyDataContext } from '@/main/context/currency-data-context'
 import { IGetCurrencyHistory } from '@/domain/usecases/get-currency-history'
 import Header from '../components/header/header'
+import LoadingComponent from '../components/loading/loading-component'
 
 interface IHomePageDependencies {
   currencyApi: ICurrencyApi
@@ -19,7 +20,7 @@ export default function HomePage (
   dependencies: IHomePageDependencies
 ): JSX.Element {
   const { setCurrencyData } = useContext(CurrencyDataContext)
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
   useEffect(() => {
     setIsLoading(true)
     const promise1 = dependencies.currencyApi
@@ -91,12 +92,10 @@ export default function HomePage (
 
   return (
     <>
-      {isLoading && <h1>Loading....</h1>}
-      <>
-        <Header />
-        <Main />
-        {/* <Footer /> */}
-      </>
+      <LoadingComponent visible={isLoading} />
+      <Header />
+      <Main />
+      {/* <Footer /> */}
     </>
   )
 }
