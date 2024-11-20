@@ -8,7 +8,9 @@ export default function ContextProvider ({ children }: any): JSX.Element {
     value: '',
     name: '',
     timestamp: '',
-    lastDays: []
+    lastDays: [],
+    low: '',
+    variation: ''
   }])
   return (
     <CurrencyDataContext.Provider value={{ CurrencyData, setCurrencyData }}>

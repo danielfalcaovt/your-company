@@ -8,6 +8,8 @@ export interface CurrencyDataType {
   name: string
   lastDays?: ICurrency[]
   timestamp: string
+  low: string
+  variation: string
 }
 
 type currencyDataContextType = {
@@ -22,6 +24,8 @@ export const CurrencyDataContext = createContext<currencyDataContextType>({
     value: '',
     name: '',
     timestamp: '',
+    low: '',
+    variation: '',
     lastDays: []
   }],
   setCurrencyData () {}
