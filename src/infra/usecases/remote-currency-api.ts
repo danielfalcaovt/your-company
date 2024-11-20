@@ -19,7 +19,7 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
       const finalResult = result.body
       for (const pos of currencyProperties) {
         finalResult[pos].value = `R$ ${Number(
-          result.body[pos].high
+          result.body[pos].bid
         ).toLocaleString()}`
         let resultName = ''
         for (const i of result.body[pos].name as string) {
@@ -31,7 +31,7 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
         }
         finalResult[pos].name = resultName
         currenciesArray.push(finalResult[pos])
-        delete finalResult[pos].high
+        delete finalResult[pos].bid
       }
       return new Promise((resolve) => resolve(currenciesArray))
     } else {
