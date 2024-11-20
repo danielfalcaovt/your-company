@@ -6,5 +6,6 @@ export interface ICurrency {
   lastDays?: ICurrency[]
   timestamp: string
   low: string
+  high: string
   variation: string
 }

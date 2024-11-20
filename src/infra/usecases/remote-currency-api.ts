@@ -21,6 +21,9 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
         finalResult[pos].value = `R$ ${Number(
           result.body[pos].bid
         ).toLocaleString()}`
+        finalResult[pos].high = `R$ ${Number(
+          result.body[pos].high
+        ).toLocaleString()}`
         finalResult[pos].low = `R$ ${Number(
           result.body[pos].low
         ).toLocaleString()}`

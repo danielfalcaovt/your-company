@@ -10,6 +10,7 @@ export default function ContextProvider ({ children }: any): JSX.Element {
     timestamp: '',
     lastDays: [],
     low: '',
+    high: '',
     variation: ''
   }])
   return (
