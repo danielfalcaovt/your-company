@@ -1,0 +1,21 @@
+.sponsorsContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  background: #004442;
+  height: 25vh;
+  z-index: 55;
+  margin: 10vh 0px;
+  position: relative;
+  padding: 0px 10%;
+}
+
+.sponsor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sponsor>img {
+  width: 100px;
+}
