@@ -3,6 +3,7 @@ import * as styles from './currency-list-styles.scss'
 import { CurrencyDataContext } from '@/main/context/currency-data-context'
 import CurrencyIcon from '@/presentation/elements/icons/currency-icon'
 import MenuButton from '../buttons/menu-button'
+import { ICurrency } from '@/domain/protocols/currency'
 
 export default function CurrencyList (): JSX.Element {
   const { CurrencyData } = useContext(CurrencyDataContext)
@@ -13,7 +14,7 @@ export default function CurrencyList (): JSX.Element {
         <MenuButton />
       </div>
       <div className={styles.currencyList}>
-        {CurrencyData.map((currency, index) => {
+        {CurrencyData.map((currency: ICurrency, index: any) => {
           return (
             <>
               {index >= 1 ? <span></span> : ''}
@@ -23,7 +24,7 @@ export default function CurrencyList (): JSX.Element {
                   img={currency.code}
                 />
                 <div className={styles.currencyItemMain}>
-                  <h2>{currency.code}</h2>
+                  <h2>{currency.name}</h2>
                   <p>{Math.random().toFixed(4)}</p>
                   <h4 className={styles[Number(currency.pctChange) > 0 ? 'positive' : 'negative']}>{Number(currency.pctChange) > 0 && '+'}{currency.pctChange}%</h4>
                   <h3>{currency.value}</h3>

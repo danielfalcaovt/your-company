@@ -20,6 +20,11 @@
   }
   .headerIcon {
     background: transparent;
+    transition: all 0.3s;
+  }
+
+  .headerIcon:hover {
+    transform: scale(1.05);
   }
   
   .headerMain {
@@ -33,3 +38,4 @@
     display: flex;
   }
 }
+
