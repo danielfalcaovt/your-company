@@ -21,6 +21,12 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
         finalResult[pos].value = `R$ ${Number(
           result.body[pos].bid
         ).toLocaleString()}`
+        finalResult[pos].low = `R$ ${Number(
+          result.body[pos].low
+        ).toLocaleString()}`
+        finalResult[pos].variation = `R$ ${Number(
+          result.body[pos].varBid
+        ).toLocaleString()}`
         let resultName = ''
         for (const i of result.body[pos].name as string) {
           if (i !== '/') {
@@ -30,8 +36,9 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
           }
         }
         finalResult[pos].name = resultName
-        currenciesArray.push(finalResult[pos])
+        delete finalResult[pos].varBid
         delete finalResult[pos].bid
+        currenciesArray.push(finalResult[pos])
       }
       return new Promise((resolve) => resolve(currenciesArray))
     } else {
