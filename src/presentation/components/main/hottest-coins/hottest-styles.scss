@@ -1,0 +1,17 @@
+.hottestContainer {
+  height: 100vh;
+  width: 100%;
+  .hottestHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15vh;
+    h1 {
+      font-size: 2rem;
+      letter-spacing: -1px;
+      font-weight: 500;
+      margin-bottom: 5vh;
+    }
+  }
+}
