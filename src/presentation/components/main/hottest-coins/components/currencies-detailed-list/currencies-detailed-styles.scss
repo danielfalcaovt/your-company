@@ -1,0 +1,64 @@
+.currenciesDetailedContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  table {
+    height: 100%;
+    width: 80%;
+    border: 2px solid rgb(172, 172, 172);
+    border-radius: 15px;
+    border-spacing: 0;
+    tr {
+      .currencyHeaderTD {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        gap: 15px;
+      }
+      td {
+        padding: 15px 5px;
+        margin: 0px 15px;
+      }
+      .buttonTD {
+        button {
+          padding: 5px 10px;
+          border: 2px solid rgba(117, 117, 117, 0.267);
+          outline: 0px;
+          border-radius: 5px;
+        }
+        min-width: 50px;
+      }
+      th {
+        padding: 20px 5px;
+        color: rgb(146, 146, 146);
+        text-align: left;
+        font-weight: 500;
+      }
+    }
+  }
+  thead {
+    tr {
+      th {
+        padding: 35px 5px 20px 5px;
+      }
+    }
+  }
+  tbody {
+    .starTableData {
+      display: flex;
+      justify-content: center;
+      min-width: 50px;
+    }
+    tr:nth-child(odd) {
+      background: #e7eeed;
+    }
+  }
+}
+
+
+.positive {
+  color: rgb(46, 224, 46);
+}
+.negative {
+  color: rgb(221, 36, 36);
+}
