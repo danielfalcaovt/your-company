@@ -1,0 +1,18 @@
+.favoriteButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 0px;
+  outline: 0px;
+  background: transparent;
+  cursor: pointer;
+  img {
+    width: 20px;
+    height: 20px;
+  }
+  &:focus {
+    outline: 0px;
+  }
+}
