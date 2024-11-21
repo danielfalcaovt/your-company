@@ -11,6 +11,7 @@ export default function ContextProvider ({ children }: any): JSX.Element {
     lastDays: [],
     low: '',
     high: '',
+    favorite: 0,
     variation: ''
   }])
   return (

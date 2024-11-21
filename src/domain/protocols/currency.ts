@@ -8,4 +8,5 @@ export interface ICurrency {
   low: string
   high: string
   variation: string
+  favorite?: number
 }
