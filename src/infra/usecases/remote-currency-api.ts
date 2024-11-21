@@ -27,9 +27,12 @@ export class RemoteCurrencyApi implements IRemoteCurrencyApi, IGetCurrencyHistor
         finalResult[pos].low = `R$ ${Number(
           result.body[pos].low
         ).toLocaleString()}`
-        finalResult[pos].variation = `R$ ${Number(
-          result.body[pos].varBid
-        ).toLocaleString()}`
+        finalResult[pos].variation =
+          result.body[pos].varBid < 0
+            ? `-R$ ${Number(
+                result.body[pos].varBid.replace('-', '')
+              ).toLocaleString()}`
+            : `R$ ${Number(result.body[pos].varBid).toLocaleString()}`
         let resultName = ''
         for (const i of result.body[pos].name as string) {
           if (i !== '/') {
