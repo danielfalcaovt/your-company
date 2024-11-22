@@ -96,13 +96,13 @@ export default function CurrenciesDetailedTable (props: {
                 <td
                   className={
                     styles[
-                      Number(currency.variation.replace('R$ ', '')) >= 0
+                      Number(currency.variation.replace('R$ ', '').replace(',', '.').replace('.', '')) >= 0
                         ? 'positive'
                         : 'negative'
                     ]
                   }
                 >
-                  {Number(currency.variation.replace('R$ ', '')) >= 0 && '+'}
+                  {Number(currency.variation.replace('R$ ', '').replace(',', '.').replace('.', '')) >= 0 && '+'}
                   {currency.variation}
                 </td>
                 <td className={styles.buttonTD}>
