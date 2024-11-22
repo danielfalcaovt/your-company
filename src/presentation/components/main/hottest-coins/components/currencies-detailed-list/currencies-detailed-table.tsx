@@ -68,6 +68,7 @@ export default function CurrenciesDetailedTable (props: {
                     html={{
                       onClick: (e: any) => {
                         favoriteButtonClick(e, currency.code)
+                        setState(!state)
                       }
                     }}
                     active={currency.favorite}
