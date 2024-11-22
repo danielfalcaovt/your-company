@@ -24,7 +24,7 @@ export default function HomePage (
   useEffect(() => {
     setIsLoading(true)
     const promise1 = dependencies.currencyApi
-      .getCurrency('BTC-BRL,USDT-BRL,XRP-BRL,ETH-BRL')
+      .getCurrency('BTC-BRL,USDT-BRL,XRP-BRL,ETH-BRL,DOGE-BRL,LTC-BRL')
       .then((result) => {
         setCurrencyData(result)
       })
