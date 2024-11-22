@@ -15,23 +15,37 @@ export default function CurrencyList (): JSX.Element {
       </div>
       <div className={styles.currencyList}>
         {CurrencyData.map((currency: ICurrency, index: any) => {
-          return (
-            <>
-              {index >= 1 ? <span></span> : ''}
-              <div key={currency.code} className={styles.currencyItem}>
-                <CurrencyIcon
-                  html={{ className: currency.code }}
-                  img={currency.code}
-                />
-                <div className={styles.currencyItemMain}>
-                  <h2>{currency.name}</h2>
-                  <p>{Math.random().toFixed(4)}</p>
-                  <h4 className={styles[Number(currency.pctChange) > 0 ? 'positive' : 'negative']}>{Number(currency.pctChange) > 0 && '+'}{currency.pctChange}%</h4>
-                  <h3>{currency.value}</h3>
+          if (index < 4) {
+            return (
+              <>
+                {index >= 1 ? <span></span> : ''}
+                <div key={currency.code} className={styles.currencyItem}>
+                  <CurrencyIcon
+                    html={{ className: currency.code }}
+                    img={currency.code}
+                  />
+                  <div className={styles.currencyItemMain}>
+                    <h2>{currency.name}</h2>
+                    <p>{Math.random().toFixed(4)}</p>
+                    <h4
+                      className={
+                        styles[
+                          Number(currency.pctChange) > 0
+                            ? 'positive'
+                            : 'negative'
+                        ]
+                      }
+                    >
+                      {Number(currency.pctChange) > 0 && '+'}
+                      {currency.pctChange}%
+                    </h4>
+                    <h3>{currency.value}</h3>
+                  </div>
                 </div>
-              </div>
-            </>
-          )
+              </>
+            )
+          }
+          return null
         })}
       </div>
     </div>
